@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CSL_1_top_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#518BC34A">
+
+    <TextView
+        android:id="@+id/TV_4_numOfBank_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="當前題庫題目數:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
+        app:layout_constraintStart_toEndOf="@+id/TV_1_title_numOfQuestion" />
+
+    <TextView
+        android:id="@+id/TV_5_numOfBank_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="3dp"
+        android:text="數量N"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
+        app:layout_constraintStart_toEndOf="@+id/TV_4_numOfBank_text" />
+
+    <TextView
+        android:id="@+id/TV_1_title_numOfQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:background="#FFFFFF"
+        android:text="測驗題數"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/numET_1_typeNumOfQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="請輸入想要測驗的題數"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/btn_2_numOfQuestionConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_1_title_numOfQuestion" />
+
+    <TextView
+        android:id="@+id/TV_2_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="(若設定值大於題庫中題目總數，會抽選重複的隨機題目填補)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numET_1_typeNumOfQuestion" />
+
+    <TextView
+        android:id="@+id/TV_3_tip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="(若小於等於0或不輸入，則會使用全部題目)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_2_tip" />
+
+    <Switch
+        android:id="@+id/switch_1_isShuffledTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:checked="true"
+        android:showText="true"
+        android:text="啟用亂數題目"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textOff="OFF"
+        android:textOn="ON"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_2_tip" />
+
+    <Switch
+        android:id="@+id/switch_2_isShuffledOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:checked="true"
+        android:showText="true"
+        android:text="啟用亂數選項"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textOff="OFF"
+        android:textOn="ON"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_1_isShuffledTitle" />
+
+    <Button
+        android:id="@+id/btn_1_toQuestPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="15dp"
+        android:onClick="activitySettingOnClick"
+        android:text="開始測驗"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_2_tip" />
+
+    <TextView
+        android:id="@+id/TV_3_title_questionList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="21dp"
+        android:text="題目列表"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_2_isShuffledOption" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV_1_RvForQuestions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_3_toAddQuestionPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_3_title_questionList" />
+
+    <Button
+        android:id="@+id/btn_2_numOfQuestionConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:onClick="activitySettingOnClick"
+        android:text="確定"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_1_title_numOfQuestion" />
+
+    <Button
+        android:id="@+id/btn_3_toAddQuestionPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="activitySettingOnClick"
+        android:text="新增題目"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_6_BankID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="題庫ID: N"
+        app:layout_constraintBottom_toTopOf="@+id/TV_1_title_numOfQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_7_BankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="題庫名稱: XXXXXXXXXXXX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
