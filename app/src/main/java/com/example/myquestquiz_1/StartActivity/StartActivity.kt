@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.Start
+package com.example.myquestquiz_1.StartActivity
 
 import android.os.Bundle
 import android.view.View
@@ -13,6 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.launch
+
 
 //起始頁面
 class StartActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.Start
+package com.example.myquestquiz_1.StartActivity
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

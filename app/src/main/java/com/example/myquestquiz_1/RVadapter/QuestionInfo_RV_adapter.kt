@@ -3,7 +3,7 @@ package com.example.myquestquiz_1.RVadapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myquestquiz_1.QuestionInfo.QuestionInfoViewModel
+import com.example.myquestquiz_1.QuestionInfoActivity.QuestionInfoViewModel
 import com.example.myquestquiz_1.databinding.ActivityQuestionInfoRvItemBinding
 
 class QuestionInfo_RV_adapter(var myVM: QuestionInfoViewModel): RecyclerView.Adapter<QuestionInfo_RV_adapter.QuestionInfo_RV_holder>() {

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.KeyboardManager
 import com.example.myquestquiz_1.Manager.QuestionsOptionManager
-import com.example.myquestquiz_1.QuestionInfo.QuestionInfoViewModel
+import com.example.myquestquiz_1.QuestionInfoActivity.QuestionInfoViewModel
 import com.example.myquestquiz_1.databinding.ActivityQuestionInfoEditRvItemBinding
 
 class QuestionInfoEdit_RV_adapter(var myVM: QuestionInfoViewModel) :

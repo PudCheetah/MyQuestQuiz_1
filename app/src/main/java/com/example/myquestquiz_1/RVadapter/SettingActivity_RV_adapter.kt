@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.IntentManager
 import com.example.myquestquiz_1.Manager.QuestionsTitleManager
-import com.example.myquestquiz_1.Setting.SettingActivityViewModel
+import com.example.myquestquiz_1.SettingActivity.SettingActivityViewModel
 import com.example.myquestquiz_1.databinding.ActivitySettingRvItemBinding
 
 class SettingActivity_RV_adapter(context: Context,var myVM: SettingActivityViewModel): RecyclerView.Adapter<SettingActivity_RV_adapter.SettingActivity_RV_holder>() {

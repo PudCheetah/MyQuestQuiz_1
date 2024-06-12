@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.Setting
+package com.example.myquestquiz_1.SettingActivity
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myquestquiz_1.AddQuestion.AddNewQuestionViewModel
+import com.example.myquestquiz_1.AddQuestionActivity.AddNewQuestionViewModel
 import com.example.myquestquiz_1.Manager.KeyboardManager
 import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionRvItemBinding

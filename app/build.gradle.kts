@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.ui.desktop)
     //ROOM
     val room_version = "2.7.0-alpha03"
     implementation("androidx.room:room-runtime:$room_version")

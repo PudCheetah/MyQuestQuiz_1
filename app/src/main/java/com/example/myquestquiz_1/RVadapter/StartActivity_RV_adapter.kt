@@ -8,7 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.IntentManager
-import com.example.myquestquiz_1.Start.StartActivityViewModel
+import com.example.myquestquiz_1.StartActivity.StartActivityViewModel
 import com.example.myquestquiz_1.databinding.ActivityStartRvItemBinding
 
 class StartActivity_RV_adapter(var context: Context, var myVM: StartActivityViewModel) :

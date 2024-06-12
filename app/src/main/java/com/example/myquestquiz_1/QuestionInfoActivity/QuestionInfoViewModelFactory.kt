@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.QuestionInfo
+package com.example.myquestquiz_1.QuestionInfoActivity
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
