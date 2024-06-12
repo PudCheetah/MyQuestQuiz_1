@@ -185,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="正確答案"
+            android:text="正確答案:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,6 +204,17 @@
             app:layout_constraintStart_toEndOf="@+id/TV_3_correctAns_text"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/TV_8_correctAns_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/TV_3_correctAns_text"
+            app:layout_constraintStart_toEndOf="@+id/TV_3_correctAns_text"
+            app:layout_constraintTop_toTopOf="@+id/TV_3_correctAns_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

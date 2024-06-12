@@ -39,13 +39,15 @@ class QuestionInfoActivity : AppCompatActivity() {
             joinAll(myVM.getVM_initJob())
             myVM.bankName.value = intent.getStringExtra("bankName")
             modeChanger.changecAtivity_toInfoMode()
-            binding.TV4BankBelong.text = ("所屬題庫ID: " + "${myVM.questionqBelong.value}")
-            binding.TV5BankName.text = ("題庫名稱: " + "${myVM.bankName.value}")
-            setContentView(binding.root)
-            spinnerSet.spinnerAdapterSet_ForNumOfOption()
-            spinnerSet.spinnerAdapterSet_ForCorrectAns()
-            binding.spinner1ForNumOfOption.setSelection(myVM.numOfOptionInQuestionNow.value!!)
-            binding.spinner2ForCorrectAns.setSelection(myVM.questionNow.value!!.correctAns!!)
+            with(binding){
+                TV4BankBelong.text = ("所屬題庫ID: " + "${myVM.questionqBelong.value}")
+                TV5BankName.text = ("題庫名稱: " + "${myVM.bankName.value}")
+                setContentView(root)
+                spinnerSet.spinnerAdapterSet_ForNumOfOption()
+                spinnerSet.spinnerAdapterSet_ForCorrectAns()
+                spinner1ForNumOfOption.setSelection(myVM.numOfOptionInQuestionNow.value!!)
+                spinner2ForCorrectAns.setSelection(myVM.questionNow.value!!.correctAns!!)
+            }
 
             myVM.numOfOptionInQuestionNow.observe(this@QuestionInfoActivity) {
                 spinnerSet.spinnerAdapterSet_ForCorrectAns()
