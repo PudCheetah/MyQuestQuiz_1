@@ -17,7 +17,7 @@ class SettingActivityViewModel(application: Application) : AndroidViewModel(appl
     var questionTotl = MutableLiveData<Int>()
     var numInput = MutableLiveData<Int>()
     var shuffledTitleSwitch = MutableLiveData<Boolean>()
-    var shuffledQuestionSwitch = MutableLiveData<Boolean>()
+    var shuffledOptionSwitch = MutableLiveData<Boolean>()
     var questionsListNow = MutableLiveData<List<Question>>()
     var selectedBank = MutableLiveData<Long>()
     var bankName = MutableLiveData<String>()
@@ -30,7 +30,7 @@ class SettingActivityViewModel(application: Application) : AndroidViewModel(appl
             questionTotl.value = 0
             numInput.value = 0
             shuffledTitleSwitch.value = true
-            shuffledQuestionSwitch.value = true
+            shuffledOptionSwitch.value = true
             questionsListNow.value = null
         }
     }

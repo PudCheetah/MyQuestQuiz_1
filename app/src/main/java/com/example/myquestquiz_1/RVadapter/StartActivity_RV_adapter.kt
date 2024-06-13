@@ -38,7 +38,7 @@ class StartActivity_RV_adapter(var context: Context, var myVM: StartActivityView
         with(holder) {
             TV_1_QuestionBank.text = myBankNow?.questionBankName
             btn_1_Choice.setOnClickListener {
-                intentManager.putExtra("ToSetting", "SelectedBank", myBankNow?.questionBankID)
+                intentManager.putExtra("ToSetting", "bankID", myBankNow?.questionBankID)
                 intentManager.putExtra("ToSetting", "BankName", myBankNow?.questionBankName)
                 startActivity(context, intentManager.getIntent("ToSetting")!!, null)
             }

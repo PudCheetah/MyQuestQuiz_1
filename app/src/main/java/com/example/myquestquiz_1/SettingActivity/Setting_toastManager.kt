@@ -10,8 +10,8 @@ class Setting_toastManager() {
         when(string){
             "shuffledTitleSwitchAction_on" -> {"亂數題目啟動"}
             "shuffledTitleSwitchAction_ off" -> {"亂數題目關閉"}
-            "shuffledQuestionSwitchAction_on" -> {"亂數選項啟動"}
-            "shuffledQuestionSwitchAction_off" -> {"亂數選項關閉"}
+            "shuffledOptionSwitchAction_on" -> {"亂數選項啟動"}
+            "shuffledOptionSwitchAction_off" -> {"亂數選項關閉"}
             "btn2NumOfQuestionConfirm" -> {"題目數量已確認"}
         }
         Toast.makeText(context, myString, Toast.LENGTH_SHORT).show()

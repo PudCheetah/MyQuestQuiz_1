@@ -1,15 +1,9 @@
 package com.example.myquestquiz_1.SettingActivity
 
-import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myquestquiz_1.Manager.IntentManager
-import com.example.myquestquiz_1.Manager.KeyboardManager
-import com.example.myquestquiz_1.RVadapter.SettingActivity_RV_adapter
 import com.example.myquestquiz_1.databinding.ActivitySettingBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,7 +34,6 @@ class SettingActivity : AppCompatActivity() {
             rvAdapterset = Setting_RV_AdapterSet(this@SettingActivity, binding, myVM)
             switchSet = Setting_switchSet(toastManager, intentManager)
 
-
             joinAll(myVM.getVMinitJob())
             setContentView(binding.root)
             binding.switch1IsShuffledTitle.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -48,8 +41,8 @@ class SettingActivity : AppCompatActivity() {
                 switchSet.shuffledTitleSwitchAction(isChecked, this@SettingActivity)
             }
             binding.switch2IsShuffledOption.setOnCheckedChangeListener { buttonView, isChecked ->
-                myVM.shuffledQuestionSwitch.value = isChecked
-                switchSet.shuffledQuestionSwitchAction(isChecked, this@SettingActivity)
+                myVM.shuffledOptionSwitch.value = isChecked
+                switchSet.shuffledOptionSwitchAction(isChecked, this@SettingActivity)
             }
         }
     }
@@ -57,9 +50,8 @@ class SettingActivity : AppCompatActivity() {
         super.onStart()
         CoroutineScope(Dispatchers.Main).launch {
             joinAll(onCreatJob)
-            myVM.selectedBank.value = intent.getLongExtra("SelectedBank", -1)
+            myVM.selectedBank.value = intent.getLongExtra("bankID", -1)
             myVM.bankName.value = intent.getStringExtra("BankName")
-
             binding.TV6BankID.text = ("題庫ID: " + myVM.selectedBank.value.toString())
             binding.TV7BankName.text = ("題庫名稱: " + myVM.bankName.value)
             joinAll(myVM.updateQuestionsListNow(myVM.selectedBank.value!!))
@@ -69,20 +61,12 @@ class SettingActivity : AppCompatActivity() {
                 rvAdapterset.adapterSetting()
             }
             binding.switch1IsShuffledTitle.isChecked = myVM.shuffledTitleSwitch.value ?: true
-            binding.switch2IsShuffledOption.isChecked = myVM.shuffledQuestionSwitch.value ?: true
+            binding.switch2IsShuffledOption.isChecked = myVM.shuffledOptionSwitch.value ?: true
             btnSet.btn3ToAddQuestionPage_set()
             btnSet.btn2NumOfQuestionConfirm_set()
-            btnSet.btn1ToQuestPage_set(getNumInput())
+            btnSet.btn1ToQuestPage_set()
         }
     }
-    //取得輸入的數字
-    fun getNumInput(): Int?{
-        if (binding.numET1TypeNumOfQuestion.text.isNullOrEmpty()){
-            myVM.numInput.value = myVM.questionsListNow.value?.size
-        }else{
-            myVM.numInput.value = binding.numET1TypeNumOfQuestion.text.toString().toInt()
-        }
-        return myVM.numInput.value
-    }
+
 
 }

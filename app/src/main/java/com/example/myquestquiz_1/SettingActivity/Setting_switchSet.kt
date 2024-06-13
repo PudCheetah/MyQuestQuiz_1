@@ -16,13 +16,13 @@ class Setting_switchSet(var TM: Setting_toastManager, var intentManager: IntentM
     }
 
     //選項隨機排列開關行為
-    fun shuffledQuestionSwitchAction(isCheck: Boolean, context: Context) {
+    fun shuffledOptionSwitchAction(isCheck: Boolean, context: Context) {
         if (isCheck == true) {
-            intentManager.putExtra("ToQuestPage", "ShuffledQuestion", true)
-            TM.toastManager("shuffledQuestionSwitchAction_on", context)
+            intentManager.putExtra("ToQuestPage", "shuffledOption", true)
+            TM.toastManager("shuffledOptionSwitchAction_on", context)
         } else {
-            intentManager.putExtra("ToQuestPage", "ShuffledQuestion", false)
-            TM.toastManager("shuffledQuestionSwitchAction_off", context)
+            intentManager.putExtra("ToQuestPage", "shuffledOption", false)
+            TM.toastManager("shuffledOptionSwitchAction_off", context)
         }
     }
 }

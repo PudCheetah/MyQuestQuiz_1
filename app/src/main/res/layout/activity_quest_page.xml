@@ -21,56 +21,78 @@
             android:id="@+id/TV_1_numOfQuest_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="題號N"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="題目ID"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/TV_2_quetionTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="題目"
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TV_1_numOfQuest_num" />
+            app:layout_constraintTop_toBottomOf="@+id/TV_1_numOfQuest_num">
+
+            <TextView
+                android:id="@+id/TV_2_quetionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="題目"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/TV_3_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="8dp"
             android:text="進度:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toStartOf="@+id/TV_4_progress_now"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/TV_4_progress_now"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="1"
-            app:layout_constraintBottom_toBottomOf="@+id/TV_3_progress_text"
-            app:layout_constraintEnd_toStartOf="@+id/TV_5_progress_symbo" />
 
         <TextView
             android:id="@+id/TV_5_progress_symbo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="12dp"
             android:text="/"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@+id/TV_4_progress_now"
-            app:layout_constraintEnd_toStartOf="@+id/TV_6_progress_max" />
+            app:layout_constraintEnd_toStartOf="@+id/TV_6_progress_max"
+            app:layout_constraintTop_toTopOf="@+id/TV_4_progress_now" />
 
         <TextView
             android:id="@+id/TV_6_progress_max"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:text="N"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@+id/TV_5_progress_symbo"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/TV_5_progress_symbo" />
+
+        <TextView
+            android:id="@+id/TV_4_progress_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/TV_3_progress_text"
+            app:layout_constraintEnd_toStartOf="@+id/TV_5_progress_symbo"
+            app:layout_constraintTop_toTopOf="@+id/TV_3_progress_text" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

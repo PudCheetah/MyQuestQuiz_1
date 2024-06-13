@@ -18,5 +18,5 @@ class QuestionsTitleManager {
         return list.get(index).questionTitle!!
     }
 
-    fun ShuffledQuestionTitle(){}
+    fun shuffledQuestionTitle(){}
 }

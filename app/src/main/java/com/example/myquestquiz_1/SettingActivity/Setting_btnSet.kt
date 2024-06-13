@@ -8,9 +8,17 @@ import com.example.myquestquiz_1.databinding.ActivitySettingBinding
 
 class Setting_btnSet(var context: Context, var binding: ActivitySettingBinding,var myVM: SettingActivityViewModel, var intentManager: IntentManager, var toastManager: Setting_toastManager) {
     //開始測驗按鈕行為
-    fun btn1ToQuestPage_set(numInput: Int?){
+    fun btn1ToQuestPage_set(){
         binding.btn1ToQuestPage.setOnClickListener {
-            intentManager.putExtra("ToQuestPage", "numExpect", numInput)
+            if (binding.numET1TypeNumOfQuestion.text.isNullOrEmpty()){
+                myVM.numInput.value = myVM.questionsListNow.value?.size
+            }else{
+                myVM.numInput.value = binding.numET1TypeNumOfQuestion.text.toString().toInt()
+            }
+            intentManager.putExtra("ToQuestPage", "numExpect", myVM.numInput.value)
+            intentManager.putExtra("ToQuestPage", "bankID", myVM.selectedBank.value)
+            intentManager.putExtra("ToQuestPage", "ShuffledTitleSwitch", myVM.shuffledTitleSwitch.value)
+            intentManager.putExtra("ToQuestPage", "shuffledOption", myVM.shuffledOptionSwitch.value)
             startActivity(context, intentManager.getIntent("ToQuestPage")!!, null)
         }
     }

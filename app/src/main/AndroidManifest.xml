@@ -19,7 +19,7 @@
             android:name=".QuestionInfoActivity.QuestionInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".QuestPageActivity"
+            android:name=".QuestPageActivity.QuestPageActivity"
             android:exported="false" />
         <activity
             android:name=".SettingActivity.SettingActivity"
