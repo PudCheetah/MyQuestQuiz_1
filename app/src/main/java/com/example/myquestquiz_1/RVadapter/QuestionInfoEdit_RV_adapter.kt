@@ -32,9 +32,7 @@ class QuestionInfoEdit_RV_adapter(var myVM: QuestionInfoViewModel) :
 
     override fun getItemCount(): Int {
 //        myVM.updateQuestionNowWithValueInVM()
-        Log.d("myTag", "myVM.questionNow.value: ${myVM.questionNow.value}")
 //        myVM.numOfOptionInQuestionNow.value = questionsOptionManager.getNotNullAnsTotal(myVM.questionNow.value!!)
-        Log.d("myTag", "numOfOptionInQuestionNow: ${myVM.numOfOptionInQuestionNow.value}")
         var temp = myVM.numOfOptionInQuestionNow.value
         return temp!!
     }
@@ -49,13 +47,11 @@ class QuestionInfoEdit_RV_adapter(var myVM: QuestionInfoViewModel) :
                 ET_1_forOptionTyping.setText(myVM.getValueFromQuestionNow(position))
                 btn_2_delete.setOnClickListener {
                     var value = null
-                    Log.d(TAG, "myVM.getValueFromVM(position): ${myVM.getValueFromQuestionNow(position)}")
                     myVM.putValueToQuestionNow(position, value)
                     var temp = questionsOptionManager.optionSortByNonNull(myVM.questionNow.value!!)
                     myVM.questionNow.value = temp
                     notifyItemRemoved(position)
                     notifyDataSetChanged()
-                    Log.d("myTag", "position: ${position} , itemCount: ${itemCount}")
                 }
                 btn_1_confirm.setOnClickListener {
                     var string = ET_1_forOptionTyping.text

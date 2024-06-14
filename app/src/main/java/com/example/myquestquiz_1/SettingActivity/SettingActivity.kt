@@ -55,6 +55,7 @@ class SettingActivity : AppCompatActivity() {
             binding.TV6BankID.text = ("題庫ID: " + myVM.selectedBank.value.toString())
             binding.TV7BankName.text = ("題庫名稱: " + myVM.bankName.value)
             joinAll(myVM.updateQuestionsListNow(myVM.selectedBank.value!!))
+            myVM.updateCountOfQuestionByQuestionqBelong()
             myVM.updateQuestionTotl(myVM.questionsListNow.value)
             myVM.questionsListNow.observe(this@SettingActivity){
                 binding.TV5NumOfBankNum.text = myVM.questionsListNow.value?.size.toString()

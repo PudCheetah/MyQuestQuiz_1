@@ -52,7 +52,6 @@ class QuestionInfoActivity : AppCompatActivity() {
             myVM.numOfOptionInQuestionNow.observe(this@QuestionInfoActivity) {
                 spinnerSet.spinnerAdapterSet_ForCorrectAns()
                 binding.spinner2ForCorrectAns.setSelection(myVM.questionNow.value!!.correctAns!!)
-                Log.d("myTag", "spinner2ForCorrectAns.setSelection Activity")
                 binding.RV1ForOption?.adapter?.notifyDataSetChanged()
             }
             myVM.correctAns.observe(this@QuestionInfoActivity) {

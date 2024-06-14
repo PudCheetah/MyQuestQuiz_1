@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myquestquiz_1.Manager.IntentManager
 import com.example.myquestquiz_1.Manager.QuestionsOptionManager
 import com.example.myquestquiz_1.MyDatabase.Question
+import com.example.myquestquiz_1.QuestPageActivity.QuestPage_AlertDialogSet
 import com.example.myquestquiz_1.databinding.ActivityQuestPageRvItemBinding
 
-class QuestPageActivity_RV_adapter(var myVM: QuestPageViewModel, var question: Question): RecyclerView.Adapter<QuestPageActivity_RV_adapter.QuestPageActivity_RV_holder>() {
+class QuestPageActivity_RV_adapter(var myVM: QuestPageViewModel, var question: Question, var intentManager: IntentManager): RecyclerView.Adapter<QuestPageActivity_RV_adapter.QuestPageActivity_RV_holder>() {
     private var questionsOptionManager = QuestionsOptionManager()
     private var numOfOption: Int = questionsOptionManager.getNotNullAnsTotal(question)
     private var shuffOptionOrder_list = questionsOptionManager.optionShuffled(numOfOption - 1)
@@ -33,34 +35,33 @@ class QuestPageActivity_RV_adapter(var myVM: QuestPageViewModel, var question: Q
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
-            Log.d("myTag", "shuffOptionOrder_list: ${shuffOptionOrder_list} ")
             TV_1_Option.text = myVM.optionProvider(question, shuffOptionOrder_list.get(position)).toString()
             TV_1_Option.setOnClickListener {
-                Log.d("myTag", "shuffOptionOrder_list.get(position): ${shuffOptionOrder_list.get(position)}")
-                Log.d("myTag", "question.correctAns: ${question.correctAns}")
-                if (myVM.numExpect_intent.value!! > (myVM.progressControler.value!! + 1)){
+                if(myVM.isHadAns.value == false){
                     if((shuffOptionOrder_list.get(position)+ 1) == question.correctAns!!){
-                        Log.d("myTag", "答案正確: ${position}")
-                        Toast.makeText(it.context, "答案正確", Toast.LENGTH_SHORT).show()
+                        myVM.scoreCounter.value = myVM.scoreCounter.value!! + 1
+                        Toast.makeText(it.context, "答案正確，請前往下一題", Toast.LENGTH_SHORT).show()
                     }else{
-                        Log.d("myTag", "答案錯誤: ${position} ")
-                        Toast.makeText(it.context, "答案錯誤", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(it.context, "答案錯誤，請前往下一題", Toast.LENGTH_SHORT).show()
                     }
-                    myVM.progressControler.value = myVM.progressControler.value!!.plus(1)
-                }else{
-                    Toast.makeText(it.context, "已經到底了", Toast.LENGTH_SHORT).show()
-
-                }
-
-
-
-
-
-
-//                假設正確答案為-> 2 -> (question.correctAns + 1)
-//                假設排列後的亂數選項為->40312 if(shuffOptionOrder_list.get(position) == question.)
-//                position要等於4才能將分數計數器+1
-
+                    myVM.isHadAns.value = true
+            }else{
+                Toast.makeText(it.context, "您已作答，請前往下一題", Toast.LENGTH_SHORT).show()
+            }
+//                if (myVM.numExpect_intent.value!! >= (myVM.progressControler.value!! + 1)){
+//                    if((shuffOptionOrder_list.get(position)+ 1) == question.correctAns!!){
+//                        myVM.scoreCounter.value = myVM.scoreCounter.value!! + 1
+//                        Toast.makeText(it.context, "答案正確", Toast.LENGTH_SHORT).show()
+//                    }else{
+//                        Toast.makeText(it.context, "答案錯誤", Toast.LENGTH_SHORT).show()
+//                    }
+//                    if (myVM.numExpect_intent.value!! > (myVM.progressControler.value!! + 1)){
+//                        myVM.progressControler.value = myVM.progressControler.value!!.plus(1)
+//                    }
+//                }else{
+//                    Toast.makeText(it.context, "已經到底了", Toast.LENGTH_SHORT).show()
+//                    intentManager.putExtra("ToResult", "scoreCounter", myVM.scoreCounter.value)
+//                }
             }
         }
     }

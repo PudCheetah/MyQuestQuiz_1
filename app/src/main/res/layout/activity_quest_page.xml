@@ -95,16 +95,16 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/FAB_1_toNextPageOfQuestion"
+    <Button
+        android:id="@+id/btn_1_toNextQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
         android:clickable="true"
+        android:text="下一題"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_1_forOption"

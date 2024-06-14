@@ -33,10 +33,7 @@ class QuestionInfo_SpinnerSet(var context: Context, var binding: ActivityAddNewQ
                     if(myVM.numOfOptionInQuestionNow.value != position){
                         myVM.numOfOptionInQuestionNow.value = position
                     }
-                    Log.d(
-                        "myTag",
-                        "myVM.numOfOptionInQuestionNow.value---inSpinner ${myVM.numOfOptionInQuestionNow.value}"
-                    )
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -60,7 +57,6 @@ class QuestionInfo_SpinnerSet(var context: Context, var binding: ActivityAddNewQ
 
     }
     //ForNumOfOption的監聽器
-
     fun spinnerAdapterSet_ForCorrectAns_selectListener(){
         binding.spinner2ForCorrectAns.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {

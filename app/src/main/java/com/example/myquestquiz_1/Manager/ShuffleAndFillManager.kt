@@ -20,10 +20,8 @@ class ShuffleAndFillManager {
                     modifiedList.add(shuffledOriginal_indexList.get(random))
                 }
                 if (shuffledTitleSwitchAction == true) {
-                    Log.d("myTag", "shufflerAndFill_indext: true,true")
                     return modifiedList.shuffled()
                 } else {
-                    Log.d("myTag", "shufflerAndFill_indext: true, else")
                     return modifiedList
                 }
             }
@@ -34,13 +32,11 @@ class ShuffleAndFillManager {
                         var random = Random.nextInt(modifiedList.size)
                         modifiedList.removeAt(random)
                     }
-                    Log.d("myTag", "shufflerAndFill_indext: false, true")
                     return modifiedList.shuffled()
                 } else {
                     while (totalInNeed < modifiedList.size) {
                         modifiedList.removeLast()
                     }
-                    Log.d("myTag", "shufflerAndFill_indext: false, false")
                     return modifiedList
                 }
             }

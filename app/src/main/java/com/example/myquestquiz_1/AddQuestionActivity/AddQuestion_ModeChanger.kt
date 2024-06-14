@@ -8,5 +8,6 @@ class AddQuestion_ModeChanger(var binding: ActivityAddNewQuestionBinding) {
     fun changecAtivity_toAddNewQuestionMode(){
         binding.TV7QuestionTitle.isInvisible = true
         binding.TV6QuestionID.isInvisible = true
+        binding.TV8CorrectAnsNum.isInvisible = true
     }
 }

@@ -8,7 +8,6 @@ import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionBinding
 
 class QuestionInfo_RV_AdapterSet(var context: Context,var binding: ActivityAddNewQuestionBinding, var myVM: QuestionInfoViewModel) {
     //RV的adapter設定
-
     fun RV_adapterSet(string: String) {
         binding.RV1ForOption.layoutManager = LinearLayoutManager(context)
         binding.RV1ForOption.setHasFixedSize(true)

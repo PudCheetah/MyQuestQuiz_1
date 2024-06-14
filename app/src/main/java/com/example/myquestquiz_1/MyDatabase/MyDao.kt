@@ -26,6 +26,8 @@ interface MyQuestionDao {
 
     @Query("select Count(*) From MyQuestionBank WHERE questionBankID = :questionBankId")
     fun getCountQuestionInQuestionBank(questionBankId: Long): Long
+    @Query("select Count(*) From Question WHERE QuestionqBelong = :questionqBelong")
+    fun getCountOfQuestionByQuestionqBelong(questionqBelong: Long): Long
 
     @Query("select * From Question where QuestionqBelong = :questionqBelong")
     fun getAllQuestionByQuestionqBelong(questionqBelong: Long): List<Question>

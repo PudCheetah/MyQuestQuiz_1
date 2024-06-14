@@ -32,7 +32,6 @@ class QuestionInfo_ModeChanger(var binding: ActivityAddNewQuestionBinding, var m
             TV2ForNumOfOptionText.isInvisible = false
             spinner1ForNumOfOption.isInvisible = false
             btn1QuestionInputConfirm.isInvisible = false
-//            TV3CorrectAnsText.isInvisible = true
             spinner1ForNumOfOption.isInvisible = false
             spinner2ForCorrectAns.isInvisible = false
             TV8CorrectAnsNum.isInvisible = true

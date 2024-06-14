@@ -17,6 +17,7 @@ class MyRepository(context: Context) {
         private var listOfQuestions_inMyRepository: List<Question>? = null
         private var listOfBank_inMyRepository: List<MyQuestionBank>? = null
     }
+    private var CountOfQuestionByQuestionqBelong: Long ?= 0
 
     init {
         myRepositoryInitJob = CoroutineScope(Dispatchers.IO).launch {
@@ -147,5 +148,15 @@ class MyRepository(context: Context) {
             myDao?.deleteQuestionByID(questionID)
         }
         return deleteQuestionJob
+    }
+    //根據questionBelong查詢該題庫有多少題目
+    fun getCountOfQuestionByQuestionqBelong(questionqBelong: Long): Job{
+        var getCountJob = CoroutineScope(Dispatchers.IO).launch {
+            CountOfQuestionByQuestionqBelong = myDao?.getCountOfQuestionByQuestionqBelong(questionqBelong)
+        }
+        return getCountJob
+    }
+    fun getCountOfQuestionInMyRepository(): Long?{
+        return CountOfQuestionByQuestionqBelong ?: 0
     }
 }

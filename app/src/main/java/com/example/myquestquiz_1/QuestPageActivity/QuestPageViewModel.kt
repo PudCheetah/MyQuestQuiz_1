@@ -36,6 +36,7 @@ class QuestPageViewModel(application: Application, bankID: Long, numExpect: Int)
     var shuffledTitleSwitch_intent = MutableLiveData<Boolean>()
     var shuffledOption_intent = MutableLiveData<Boolean>()
     var scoreCounter = MutableLiveData<Double>()
+    var isHadAns = MutableLiveData<Boolean>()
 
     init {
         bankID_intent.value = bankID
@@ -46,6 +47,8 @@ class QuestPageViewModel(application: Application, bankID: Long, numExpect: Int)
             myRepository.updateQuestions_ByQuestionqBelong(bankID_intent.value!!)
             listOfQuestions.value = myRepository.getListOfQuestions()
             progressControler.value = 0
+            scoreCounter.value = 0.0
+            isHadAns.value = false
         }
     }
 

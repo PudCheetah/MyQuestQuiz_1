@@ -21,6 +21,7 @@ class SettingActivityViewModel(application: Application) : AndroidViewModel(appl
     var questionsListNow = MutableLiveData<List<Question>>()
     var selectedBank = MutableLiveData<Long>()
     var bankName = MutableLiveData<String>()
+    var countOfQuestionByQuestionqBelong = MutableLiveData<Long>()
 
     init {
         SettingActivityVM_InitJob = CoroutineScope(Dispatchers.Main).launch {
@@ -32,6 +33,7 @@ class SettingActivityViewModel(application: Application) : AndroidViewModel(appl
             shuffledTitleSwitch.value = true
             shuffledOptionSwitch.value = true
             questionsListNow.value = null
+            countOfQuestionByQuestionqBelong.value = 0
         }
     }
     //從儲存庫中更新VM中的questionsListNow
@@ -59,6 +61,13 @@ class SettingActivityViewModel(application: Application) : AndroidViewModel(appl
             joinAll(myRepository.deleteQuestionByID(questionID))
             joinAll(updateQuestionsListNow(questionBelong))
         }
+    }
+    fun updateCountOfQuestionByQuestionqBelong(): Job{
+        var job = CoroutineScope(Dispatchers.Main).launch {
+            joinAll(myRepository.getCountOfQuestionByQuestionqBelong(selectedBank.value!!))
+            countOfQuestionByQuestionqBelong.value = myRepository.getCountOfQuestionInMyRepository()
+        }
+        return job
     }
 
 }
