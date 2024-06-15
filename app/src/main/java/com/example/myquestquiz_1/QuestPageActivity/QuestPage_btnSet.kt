@@ -18,7 +18,7 @@ class QuestPage_btnSet(var context: Context, var binding: ActivityQuestPageBindi
 //                    Toast.makeText(it.context, "您尚未做答本題", Toast.LENGTH_SHORT).show()
 //                }else{
                     Toast.makeText(context, "已經到底了", Toast.LENGTH_SHORT).show()
-                    intentManager.putExtra("ToResult", "scoreCounter", myVM.scoreCounter.value)
+//                    intentManager.putExtra("ToResult", "scoreCounter", myVM.scoreCounter.value)
                     questPage_AlertDialogSet.alertDialogSet()
 //                }
             }else{

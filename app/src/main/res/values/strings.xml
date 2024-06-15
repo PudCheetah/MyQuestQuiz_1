@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MyQuestQuiz_1</string>
+    <string name="AlertDialog_confirmWindows">確認視窗</string>
+    <string name="alertDialogMessage_questResult">即將跳轉到結果頁面  \n總題數: %1$d\n答對題數: %2$d \n答錯或跳過題數: %3$d \n答題率: %4$s%%</string>
     <string-array name="activityNewQuestionSpinner">
         <item>0</item>
         <item>1</item>

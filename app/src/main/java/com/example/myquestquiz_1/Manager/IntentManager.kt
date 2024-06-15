@@ -8,8 +8,10 @@ import com.example.myquestquiz_1.AddQuestionActivity.AddNewQuestion
 import com.example.myquestquiz_1.QuestionInfoActivity.QuestionInfoActivity
 import com.example.myquestquiz_1.ResultPage.ResultPageActivity
 import com.example.myquestquiz_1.SettingActivity.SettingActivity
+import com.example.myquestquiz_1.StartActivity.StartActivity
 
 class IntentManager(context: Context) {
+    private val myIntentToStart = Intent(context, StartActivity::class.java)
     private val myIntentToQuestPage = Intent(context, QuestPageActivity::class.java)
     private val myIntentToQuestionInfo = Intent(context, QuestionInfoActivity::class.java)
     private val myIntentToAddQuestion = Intent(context, AddNewQuestion::class.java)
@@ -61,6 +63,9 @@ class IntentManager(context: Context) {
     fun getIntent(toWhere: String): Intent? {
         var myIntent = myIntentToQuestPage
         when (toWhere) {
+            "ToStart" -> {
+                myIntent = myIntentToStart
+            }
             "ToQuestPage" -> {
                 myIntent = myIntentToQuestPage
             }

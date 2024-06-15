@@ -4,17 +4,24 @@ import QuestPageViewModel
 import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
 import com.example.myquestquiz_1.Manager.IntentManager
+import com.example.myquestquiz_1.R
 
 class QuestPage_AlertDialogSet(var context: Context, var myVM: QuestPageViewModel, var intentManager: IntentManager) {
 
     fun alertDialogSet(){
         AlertDialog.Builder(context)
-            .setTitle("確認視窗")
-            .setMessage("即將跳轉到結果頁面  \n總題數: ${myVM.numExpect_intent.value}\n答對題數: ${myVM.scoreCounter.value!!.toInt()} \n答錯或跳過題數: ${(myVM.numExpect_intent.value!! - myVM.scoreCounter.value!!).toInt()} \n答題率: ${String.format("%.2f", (myVM.scoreCounter.value!!.toFloat() / myVM.numExpect_intent.value!!.toFloat()) * 100)}%")
+            .setTitle(context.getString(R.string.AlertDialog_confirmWindows))
+            .setMessage(
+                context.getString(
+                    R.string.alertDialogMessage_questResult,
+                    myVM.numExpect_intent.value,
+                    myVM.scoreCounter.value!!.toInt(),
+                    (myVM.numExpect_intent.value!! - myVM.scoreCounter.value!!).toInt(),
+                    String.format("%.2f", (myVM.scoreCounter.value!!.toFloat() / myVM.numExpect_intent.value!!.toFloat()) * 100)
+                ))
             .setPositiveButton("跳轉", DialogInterface.OnClickListener { dialog, which ->
-                context.startActivity(intentManager.getIntent("ToSetting"))
+                context.startActivity(intentManager.getIntent("ToStart"))
             }).show()
     }
 }
