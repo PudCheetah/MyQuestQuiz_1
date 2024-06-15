@@ -5,7 +5,9 @@
     android:id="@+id/CSL_1_top_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#518BC34A">
+    android:background="#518BC34A"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="4dp">
 
     <TextView
         android:id="@+id/TV_4_numOfBank_text"
@@ -14,35 +16,34 @@
         android:layout_marginBottom="3dp"
         android:text="@string/CurrentNumberOfQuestionsInQuestionBank"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
+        android:textSize="@dimen/text_size_custom_text_1"
+        app:layout_constraintBottom_toBottomOf="@+id/TV_1_title_numOfQuestion"
         app:layout_constraintStart_toEndOf="@+id/TV_1_title_numOfQuestion"
-        app:layout_constraintTop_toBottomOf="@+id/TV_7_BankName" />
+        app:layout_constraintTop_toTopOf="@+id/TV_1_title_numOfQuestion"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/TV_5_numOfBank_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:text="數量N"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
-        app:layout_constraintStart_toEndOf="@+id/TV_4_numOfBank_text" />
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TV_4_numOfBank_text"
+        app:layout_constraintStart_toEndOf="@+id/TV_4_numOfBank_text"
+        app:layout_constraintTop_toTopOf="@+id/TV_4_numOfBank_text" />
 
     <TextView
         android:id="@+id/TV_1_title_numOfQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="16dp"
         android:background="#FFFFFF"
         android:text="@string/QuestionsOfQuest"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TV_6_BankID" />
 
     <EditText
         android:id="@+id/numET_1_typeNumOfQuestion"
@@ -81,7 +82,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:checked="true"
         android:showText="true"
@@ -90,7 +90,7 @@
         android:textOff="OFF"
         android:textOn="ON"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_2_tip" />
+        app:layout_constraintTop_toBottomOf="@+id/TV_3_tip" />
 
     <Switch
         android:id="@+id/switch_2_isShuffledOption"
@@ -150,9 +150,9 @@
         android:layout_marginEnd="15dp"
         android:onClick="activitySettingOnClick"
         android:text="@string/Confirm"
-        app:layout_constraintBottom_toTopOf="@+id/TV_2_tip"
+        app:layout_constraintBottom_toBottomOf="@+id/numET_1_typeNumOfQuestion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_1_title_numOfQuestion" />
+        app:layout_constraintTop_toTopOf="@+id/numET_1_typeNumOfQuestion" />
 
     <Button
         android:id="@+id/btn_3_toAddQuestionPage"
@@ -170,8 +170,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
         android:text="題庫ID: N"
-        app:layout_constraintBottom_toTopOf="@+id/TV_1_title_numOfQuestion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -179,7 +179,7 @@
         android:id="@+id/TV_7_BankName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:text="題庫名稱: XXXXXXXXXXXX"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

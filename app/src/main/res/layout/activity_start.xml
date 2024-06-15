@@ -39,7 +39,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:hint="@string/plzInputBankName"
-        android:textSize="@dimen/text_size_custom_btn"
+        android:textSize="@dimen/text_size_custom_text_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_1_addBank"
         app:layout_constraintHorizontal_bias="1.0"

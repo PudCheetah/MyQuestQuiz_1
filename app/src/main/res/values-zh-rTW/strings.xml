@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="textSize_activity_start_rv_item">18sp</dimen>
+    <dimen name="textSize_activity_start_Title">40sp</dimen>
+    <dimen name="activity_question_info_edit_rv_item_BTN">15sp</dimen>
     <dimen name= "text_size_custom_Title">40sp</dimen>
     <dimen name= "text_size_custom_text_1">16sp</dimen>
     <dimen name= "text_size_custom_text_2">12sp</dimen>
-    <dimen name= "text_size_custom_btn">30 sp</dimen>
+    <dimen name= "text_size_custom_btn">15sp</dimen>
     <string name="app_name">MyQuestQuiz_1</string>
     <string name="AlertDialog_confirmWindows">確認視窗</string>
     <string name="alertDialogMessage_questResult">即將跳轉到結果頁面  \n總題數: %1$d\n答對題數: %2$d \n答錯或跳過題數: %3$d \n答題率: %4$s%%</string>
-    <string name="jumpTo">跳轉</string>
+    <string name="jumpTo">跳轉到開頭</string>
     <string name="ErrorBankNameCantBeEmpty">錯誤,題庫名稱不可為空</string>
     <string name="bankID">"題庫ID: "</string>
     <string name="bankName">"題庫名稱: "</string>
@@ -58,5 +61,14 @@
     <string name="questionsList">題目列表</string>
     <string name="btn_addNewQuestion">新增題目</string>
     <string name="QuestionsOfQuest">測驗題數</string>
-
+    <string name="btn_edit">編輯</string>
+    <string name="questionID">題目ID:</string>
+    <string name="Progress">"進度: "</string>
+    <string name="NextQuestion">下一頁</string>
+    <string name="optiion">"選項: "</string>
+    <string name="questionTitle">題目:</string>
+    <string name="NumOfQueestion">"請選擇題目數: "</string>
+    <string name="correctAns">"正確答案: "</string>
+    <string name="save">儲存</string>
+    <string name="NunOfOption">"請選擇選項數: "</string>
 </resources>

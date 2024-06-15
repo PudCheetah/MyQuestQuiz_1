@@ -21,7 +21,7 @@
             android:id="@+id/TV_1_numOfQuest_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="題目ID"
+            android:text="@string/questionID"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="進度:"
+            android:text="@string/Progress"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toStartOf="@+id/TV_4_progress_now"
             app:layout_constraintTop_toTopOf="parent" />
@@ -102,7 +102,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
-        android:text="下一題"
+        android:text="@string/NextQuestion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

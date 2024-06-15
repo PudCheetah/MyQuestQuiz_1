@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="題目ID:"
+            android:text="@string/questionID"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TV_4_bankBelong_text" />
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="所屬題庫ID:"
+            android:text="@string/bankID"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:text="題庫名稱:"
+            android:text="@string/bankName"
             app:layout_constraintEnd_toStartOf="@+id/TV_6_bankName_string"
             app:layout_constraintTop_toTopOf="parent" />
 
