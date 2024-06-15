@@ -52,4 +52,10 @@ class StartActivityViewModel(application: Application): AndroidViewModel(applica
         }
         return myVm_DeleteQuestionBankByIdJob
     }
+    fun deleteQuestionByBankBelong(questionBelong: Long): Job{
+        var deleteQuestionByBankBelongJob = CoroutineScope(Dispatchers.IO).launch {
+            joinAll(myRepository.deleteQuestionByByQuestionBelong(questionBelong))
+        }
+        return deleteQuestionByBankBelongJob
+    }
 }

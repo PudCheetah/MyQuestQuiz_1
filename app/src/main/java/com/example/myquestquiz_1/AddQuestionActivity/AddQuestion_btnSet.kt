@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.compose.ui.window.application
 import com.example.myquestquiz_1.Manager.KeyboardManager
 import com.example.myquestquiz_1.Manager.QuestionsOptionManager
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +35,8 @@ class AddQuestion_btnSet(var context: Context, var binding: ActivityAddNewQuesti
         var questionsOptionManager = QuestionsOptionManager()
         binding.btn2Store.setOnClickListener {
             if (binding.ET1ForQuestionTyping.text.isEmpty()){
-                Toast.makeText(context, "錯誤，題目不可為空", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,
+                    context.getString(R.string.ErrorQuestionNameCantBeEmpty), Toast.LENGTH_SHORT).show()
             }else{
                 CoroutineScope(Dispatchers.Main).launch {
                     myVM.questionTitleInput.value = binding.ET1ForQuestionTyping.text.toString()
@@ -42,7 +44,8 @@ class AddQuestion_btnSet(var context: Context, var binding: ActivityAddNewQuesti
                     var newQuestion = questionsOptionManager.optionSortByNonNull(myVM.myQuestion.value!!)
                     myVM.updateMyQuestionByQuestion(newQuestion)
                     joinAll(myVM.storeQuestionToDatabase(application, myVM.myQuestion.value!!))
-                    Toast.makeText(application, "儲存完成，可返回上一頁或繼續新增", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(application,
+                        context.getString(R.string.RestoreComplete), Toast.LENGTH_SHORT).show()
                     binding.ET1ForQuestionTyping.setText("")
                     myVM.clearQuestionInfo()
                     binding.spinner1ForNumOfOption.setSelection(0)

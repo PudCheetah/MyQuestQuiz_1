@@ -18,6 +18,7 @@ class QuestionInfo_ModeChanger(var binding: ActivityAddNewQuestionBinding, var m
             TV8CorrectAnsNum.isInvisible = false
             RV_adapterSet. RV_adapterSet("infoMode")
             btn2Store.setText("編輯")
+            myVM.storeAccept.value = true
             TV6QuestionID.text = ("題目ID: " + "${myVM.questionNow.value!!.questionID}")
             TV7QuestionTitle.text = ("${myVM.questionNow.value!!.questionTitle}")
             binding.TV8CorrectAnsNum.text = myVM.questionNow.value!!.correctAns.toString()
@@ -41,6 +42,7 @@ class QuestionInfo_ModeChanger(var binding: ActivityAddNewQuestionBinding, var m
             spinner2ForCorrectAns.setSelection(myVM.questionNow.value!!.correctAns!!)
             RV_adapterSet.RV_adapterSet("editMode")
             btn2Store.setText("儲存")
+            myVM.storeAccept.value = false
             binding.TV8CorrectAnsNum.text = myVM.questionNow.value!!.correctAns.toString()
             root.invalidate()
         }

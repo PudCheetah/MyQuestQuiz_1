@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.RVadapter
+package com.example.myquestquiz_1.AddQuestionActivity
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myquestquiz_1.AddQuestionActivity.AddNewQuestionViewModel
 import com.example.myquestquiz_1.Manager.KeyboardManager
 import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionRvItemBinding
 
-class AddNewQuestion_RV_adapter(var myVM: AddNewQuestionViewModel) :
-    RecyclerView.Adapter<AddNewQuestion_RV_adapter.AddNewQuestion_RV_holder>() {
+class AddNewQuestion_RV_Adapter(var myVM: AddNewQuestionViewModel) :
+    RecyclerView.Adapter<AddNewQuestion_RV_Adapter.AddNewQuestion_RV_holder>() {
     var keyboardManager = KeyboardManager()
 
     inner class AddNewQuestion_RV_holder(itemView: ActivityAddNewQuestionRvItemBinding) :
@@ -34,7 +33,7 @@ class AddNewQuestion_RV_adapter(var myVM: AddNewQuestionViewModel) :
     }
 
     override fun getItemCount(): Int {
-        return myVM.spinnerChoice.value!!
+        return myVM.spinnerChoice.value!! ?: 0
     }
 
     override fun onBindViewHolder(holder: AddNewQuestion_RV_holder, position: Int) {
@@ -64,7 +63,7 @@ class AddNewQuestion_RV_adapter(var myVM: AddNewQuestionViewModel) :
             btn_1_ForTypingConfirm.setOnClickListener {
                 keyboardManager.hideKeyBoard(it)
                 if (ET_1_ForOptionTyping.text.isNullOrEmpty()) {
-                    ET_1_ForOptionTyping.hint = "請輸入選項"
+                    ET_1_ForOptionTyping.hint = it.context.getString(R.string.plzTypeOption)
                     CSL_2_Top_3.setBackgroundColor(
                         ContextCompat.getColor(
                             it.context,
@@ -72,7 +71,7 @@ class AddNewQuestion_RV_adapter(var myVM: AddNewQuestionViewModel) :
                         )
                     )
                 }
-                if (ET_1_ForOptionTyping.hint != "請輸入選項") {
+                if (ET_1_ForOptionTyping.hint != it.context.getString(R.string.plzTypeOption)) {
                     with(actionIntegrated){
                         putStringToVM(it.context)
                         updateUI(it.context)
@@ -115,7 +114,8 @@ class AddNewQuestion_RV_adapter(var myVM: AddNewQuestionViewModel) :
         }
 
         fun myToast(context: Context) {
-            Toast.makeText(context, "選項${position + 1}，輸入完成", Toast.LENGTH_SHORT)
+            Toast.makeText(context,
+                context.getString(R.string.optionNhadConfirm, (position + 1)), Toast.LENGTH_SHORT)
                 .show()
         }
     }

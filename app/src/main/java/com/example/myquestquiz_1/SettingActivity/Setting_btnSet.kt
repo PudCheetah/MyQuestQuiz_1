@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.myquestquiz_1.Manager.IntentManager
 import com.example.myquestquiz_1.Manager.KeyboardManager
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivitySettingBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +25,8 @@ class Setting_btnSet(
             CoroutineScope(Dispatchers.Main).launch {
                 joinAll(myVM.updateCountOfQuestionByQuestionqBelong())
                 if (myVM.countOfQuestionByQuestionqBelong.value!!.toInt() == 0) {
-                    Toast.makeText(context, "錯誤，題目為零，請先新增題目", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,
+                        context.getString(R.string.ErrorQuestionCantBeEmpty), Toast.LENGTH_SHORT).show()
                 } else {
                     if (binding.numET1TypeNumOfQuestion.text.isNullOrEmpty()) {
                         myVM.numInput.value = myVM.questionsListNow.value?.size

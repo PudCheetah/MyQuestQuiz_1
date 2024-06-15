@@ -20,7 +20,7 @@ class QuestPage_AlertDialogSet(var context: Context, var myVM: QuestPageViewMode
                     (myVM.numExpect_intent.value!! - myVM.scoreCounter.value!!).toInt(),
                     String.format("%.2f", (myVM.scoreCounter.value!!.toFloat() / myVM.numExpect_intent.value!!.toFloat()) * 100)
                 ))
-            .setPositiveButton("跳轉", DialogInterface.OnClickListener { dialog, which ->
+            .setPositiveButton(context.getString(R.string.jumpTo), DialogInterface.OnClickListener { dialog, which ->
                 context.startActivity(intentManager.getIntent("ToStart"))
             }).show()
     }

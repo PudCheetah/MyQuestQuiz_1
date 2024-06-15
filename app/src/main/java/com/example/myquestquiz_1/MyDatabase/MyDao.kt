@@ -43,4 +43,7 @@ interface MyQuestionDao {
 
     @Query("delete from Question where QuestionID = :myQuestionID")
     fun deleteQuestionByID(myQuestionID: Long)
+
+    @Query("delete from Question where QuestionqBelong = :questionqBelong")
+    fun deleteQuestionByQuestionBelong(questionqBelong: Long)
 }

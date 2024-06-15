@@ -1,12 +1,11 @@
-package com.example.myquestquiz_1.RVadapter
+package com.example.myquestquiz_1.QuestionInfoActivity
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myquestquiz_1.QuestionInfoActivity.QuestionInfoViewModel
 import com.example.myquestquiz_1.databinding.ActivityQuestionInfoRvItemBinding
 
-class QuestionInfo_RV_adapter(var myVM: QuestionInfoViewModel): RecyclerView.Adapter<QuestionInfo_RV_adapter.QuestionInfo_RV_holder>() {
+class QuestionInfo_RV_Adapter(var myVM: QuestionInfoViewModel): RecyclerView.Adapter<QuestionInfo_RV_Adapter.QuestionInfo_RV_holder>() {
 
     inner class QuestionInfo_RV_holder(itemView: ActivityQuestionInfoRvItemBinding): RecyclerView.ViewHolder(itemView.root){
         var TV_1_optionText = itemView.TV1OptionText

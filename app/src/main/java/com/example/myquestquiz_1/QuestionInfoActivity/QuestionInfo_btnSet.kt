@@ -22,7 +22,7 @@ class QuestionInfo_btnSet(
 
     fun btn2Store_set() {
         binding.btn2Store.setOnClickListener {
-            if (binding.btn2Store.text == "編輯") {
+            if (myVM.storeAccept.value == true) {
                 modeChanger.changeActivity_toEditMode()
             } else {
                 modeChanger.changecAtivity_toInfoMode()

@@ -159,4 +159,11 @@ class MyRepository(context: Context) {
     fun getCountOfQuestionInMyRepository(): Long?{
         return CountOfQuestionByQuestionqBelong ?: 0
     }
+
+    fun deleteQuestionByByQuestionBelong(questionBankId: Long): Job{
+        var deleteQuestionByQuestionBelongJob = CoroutineScope(Dispatchers.IO).launch {
+            myDao?.deleteQuestionByQuestionBelong(questionBankId)
+        }
+        return deleteQuestionByQuestionBelongJob
+    }
 }

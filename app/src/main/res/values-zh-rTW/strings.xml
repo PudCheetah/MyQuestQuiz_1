@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name= "text_size_custom_Title">40sp</dimen>
+    <dimen name= "text_size_custom_text_1">16sp</dimen>
+    <dimen name= "text_size_custom_text_2">12sp</dimen>
+    <dimen name= "text_size_custom_btn">30 sp</dimen>
+    <string name="app_name">MyQuestQuiz_1</string>
+    <string name="AlertDialog_confirmWindows">確認視窗</string>
+    <string name="alertDialogMessage_questResult">即將跳轉到結果頁面  \n總題數: %1$d\n答對題數: %2$d \n答錯或跳過題數: %3$d \n答題率: %4$s%%</string>
+    <string name="jumpTo">跳轉</string>
+    <string name="ErrorBankNameCantBeEmpty">錯誤,題庫名稱不可為空</string>
+    <string name="bankID">"題庫ID: "</string>
+    <string name="bankName">"題庫名稱: "</string>
+    <string name="shuffledTitleON">亂數題目啟動</string>
+    <string name="shuffledTitleOFF">亂數題目關閉</string>
+    <string name="shuffledOptionOn">亂數選項啟動</string>
+    <string name="shuffledOptionOFF">亂數選項關閉</string>
+    <string name="titleNumConfirmed">題目數量已確認</string>
+    <string name="ErrorQuestionCantBeEmpty">錯誤，題目為零，請先新增題目</string>
+    <string name="Confirm">確認</string>
+    <string name="QuestionBankDeleteConfirm">你確定要刪除此題庫嗎?\n這將會刪除題庫及題庫下的所有題目</string>
+    <string name="QuestionHasBeenDelete">資料庫 %1$s 已刪除</string>
+    <string name="Cancel">取消</string>
+    <string name="AnsCorrect">答案正確，請前往下一題</string>
+    <string name="AnsWrong">答案錯誤，請前往下一題</string>
+    <string name="haveAnswered">您已作答，請前往下一題</string>
+    <string name="plzTypeOption">請輸入選項</string>
+    <string name="optionNhadConfirm">選項%1$d，輸入完成</string>
+    <string name="Result">結果</string>
+    <string name="gotEnd">已經到底了</string>
+    <string name="bankBelong">"所屬題庫ID: "</string>
+    <string name="ErrorQuestionNameCantBeEmpty">錯誤，題目不可為空</string>
+    <string name="RestoreComplete">儲存完成，可返回上一頁或繼續新增</string>
+    <string name="plzInputBankName">請輸入題庫名稱</string>
+    <string-array name="activityNewQuestionSpinner">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="btn_Delete">刪除</string>
+    <string name="btn_choose">選擇</string>
+    <string name="TV_choiseAbank">請選擇一個題庫</string>
+    <string name="btn_addBank">新增題庫</string>
+    <string name="btn_Detail">詳細</string>
+    <string name="CurrentNumberOfQuestionsInQuestionBank">當前題庫中的題目數:</string>
+    <string name="plzInputNumOfQuestion">請輸入希望測驗的總題數</string>
+    <string name="ShuffledTitle">亂數題目</string>
+    <string name="ShuffledOption">亂數選項</string>
+    <string name="btn_questStart">測驗開始</string>
+    <string name="questionsList">題目列表</string>
+    <string name="btn_addNewQuestion">新增題目</string>
+    <string name="QuestionsOfQuest">測驗題數</string>
+
+</resources>

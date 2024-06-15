@@ -40,7 +40,7 @@ class QuestPageActivity : AppCompatActivity() {
         questPage_RV_AdapterSet = QuestPage_RV_AdapterSet(binding, myVM, intentManager)
         questPage_AlertDialogSet = QuestPage_AlertDialogSet(this, myVM, intentManager)
         questPage_btnSet = QuestPage_btnSet(this, binding, myVM, intentManager, questPage_AlertDialogSet)
-        questPageObserveSet = QuestPage_ObserveSet(binding, myVM, questPage_RV_AdapterSet, questPage_AlertDialogSet)
+        questPageObserveSet = QuestPage_ObserveSet(this, binding, myVM, questPage_RV_AdapterSet)
 
 
         CoroutineScope(Dispatchers.Main).launch {

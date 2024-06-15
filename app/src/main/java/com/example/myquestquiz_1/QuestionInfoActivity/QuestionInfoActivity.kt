@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myquestquiz_1.Manager.KeyboardManager
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,8 +41,8 @@ class QuestionInfoActivity : AppCompatActivity() {
             myVM.bankName.value = intent.getStringExtra("bankName")
             modeChanger.changecAtivity_toInfoMode()
             with(binding){
-                TV4BankBelong.text = ("所屬題庫ID: " + "${myVM.questionqBelong.value}")
-                TV5BankName.text = ("題庫名稱: " + "${myVM.bankName.value}")
+                TV4BankBelong.text = (getString(R.string.bankBelong) + "${myVM.questionqBelong.value}")
+                TV5BankName.text = (getString(R.string.bankName) + "${myVM.bankName.value}")
                 setContentView(root)
                 spinnerSet.spinnerAdapterSet_ForNumOfOption()
                 spinnerSet.spinnerAdapterSet_ForCorrectAns()

@@ -1,13 +1,10 @@
-package com.example.myquestquiz_1.RVadapter
+package com.example.myquestquiz_1.QuestionInfoActivity
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.KeyboardManager
 import com.example.myquestquiz_1.Manager.QuestionsOptionManager
-import com.example.myquestquiz_1.QuestionInfoActivity.QuestionInfoViewModel
 import com.example.myquestquiz_1.databinding.ActivityQuestionInfoEditRvItemBinding
 
 class QuestionInfoEdit_RV_adapter(var myVM: QuestionInfoViewModel) :

@@ -2,17 +2,23 @@ package com.example.myquestquiz_1.SettingActivity
 
 import android.content.Context
 import android.widget.Toast
+import com.example.myquestquiz_1.R
 
 class Setting_toastManager() {
     //Toast訊息整合
     fun toastManager(string: String, context: Context){
         var myString = ""
         when(string){
-            "shuffledTitleSwitchAction_on" -> {"亂數題目啟動"}
-            "shuffledTitleSwitchAction_ off" -> {"亂數題目關閉"}
-            "shuffledOptionSwitchAction_on" -> {"亂數選項啟動"}
-            "shuffledOptionSwitchAction_off" -> {"亂數選項關閉"}
-            "btn2NumOfQuestionConfirm" -> {"題目數量已確認"}
+            "shuffledTitleSwitchAction_on" -> {
+                context.getString(R.string.shuffledTitleON)}
+            "shuffledTitleSwitchAction_ off" -> {
+                context.getString(R.string.shuffledTitleOFF)}
+            "shuffledOptionSwitchAction_on" -> {
+                context.getString(R.string.shuffledOptionOn)}
+            "shuffledOptionSwitchAction_off" -> {
+                context.getString(R.string.shuffledOptionOFF)}
+            "btn2NumOfQuestionConfirm" -> {
+                context.getString(R.string.titleNumConfirmed)}
         }
         Toast.makeText(context, myString, Toast.LENGTH_SHORT).show()
     }

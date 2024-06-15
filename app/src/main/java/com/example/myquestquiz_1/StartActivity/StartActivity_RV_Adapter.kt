@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.RVadapter
+package com.example.myquestquiz_1.StartActivity
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.IntentManager
-import com.example.myquestquiz_1.StartActivity.StartActivityViewModel
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityStartRvItemBinding
 
-class StartActivity_RV_adapter(var context: Context, var myVM: StartActivityViewModel) :
-    RecyclerView.Adapter<StartActivity_RV_adapter.StartActivity_RV_holder>() {
+class StartActivity_RV_Adapter(var context: Context, var myVM: StartActivityViewModel) :
+    RecyclerView.Adapter<StartActivity_RV_Adapter.StartActivity_RV_holder>() {
         var intentManager = IntentManager(context)
     inner class StartActivity_RV_holder(itemView: ActivityStartRvItemBinding) :
         RecyclerView.ViewHolder(itemView.root) {
@@ -44,17 +44,21 @@ class StartActivity_RV_adapter(var context: Context, var myVM: StartActivityView
             }
             btn_2_Delete.setOnClickListener {
                 AlertDialog.Builder(context)
-                    .setTitle("確認")
-                    .setMessage("你確定要刪除此資料庫嗎?")
-                    .setPositiveButton("確定", { dialog, which ->
+                    .setTitle(context.getString(R.string.Confirm))
+                    .setMessage(context.getString(R.string.QuestionBankDeleteConfirm))
+                    .setPositiveButton(context.getString(R.string.Confirm), { dialog, which ->
                         myVM.deleteQuestionBankById(myBankNow?.questionBankID ?: 0)
+                        myVM.deleteQuestionByBankBelong(myBankNow?.questionBankID ?: 0)
                         Toast.makeText(
                             context,
-                            "資料庫 ${myBankNow?.questionBankName} 已刪除",
+                            context.getString(
+                                R.string.QuestionHasBeenDelete,
+                                myBankNow?.questionBankName
+                            ),
                             Toast.LENGTH_SHORT
                         ).show()
                     })
-                    .setNegativeButton("取消", { dislog, which -> })
+                    .setNegativeButton(context.getString(R.string.Cancel), { dislog, which -> })
                     .show()
             }
         }

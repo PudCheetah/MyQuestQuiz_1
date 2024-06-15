@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myquestquiz_1.Manager.IntentManager
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivitySettingBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -52,8 +53,8 @@ class SettingActivity : AppCompatActivity() {
             joinAll(onCreatJob)
             myVM.selectedBank.value = intent.getLongExtra("bankID", -1)
             myVM.bankName.value = intent.getStringExtra("BankName")
-            binding.TV6BankID.text = ("題庫ID: " + myVM.selectedBank.value.toString())
-            binding.TV7BankName.text = ("題庫名稱: " + myVM.bankName.value)
+            binding.TV6BankID.text = (getString(R.string.bankID) + myVM.selectedBank.value.toString())
+            binding.TV7BankName.text = (getString(R.string.bankName) + myVM.bankName.value)
             joinAll(myVM.updateQuestionsListNow(myVM.selectedBank.value!!))
             myVM.updateCountOfQuestionByQuestionqBelong()
             myVM.updateQuestionTotl(myVM.questionsListNow.value)

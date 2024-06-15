@@ -12,19 +12,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:text="當前題庫題目數:"
+        android:text="@string/CurrentNumberOfQuestionsInQuestionBank"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
-        app:layout_constraintStart_toEndOf="@+id/TV_1_title_numOfQuestion" />
+        app:layout_constraintStart_toEndOf="@+id/TV_1_title_numOfQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/TV_7_BankName" />
 
     <TextView
         android:id="@+id/TV_5_numOfBank_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="數量N"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/numET_1_typeNumOfQuestion"
         app:layout_constraintStart_toEndOf="@+id/TV_4_numOfBank_text" />
 
@@ -35,8 +38,9 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="25dp"
         android:background="#FFFFFF"
-        android:text="測驗題數"
+        android:text="@string/QuestionsOfQuest"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,8 +51,9 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
-        android:hint="請輸入想要測驗的題數"
+        android:hint="@string/plzInputNumOfQuestion"
         android:inputType="number"
+        android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_2_numOfQuestionConfirm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_1_title_numOfQuestion" />
@@ -80,7 +85,7 @@
         android:background="@color/white"
         android:checked="true"
         android:showText="true"
-        android:text="啟用亂數題目"
+        android:text="@string/ShuffledTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textOff="OFF"
         android:textOn="ON"
@@ -97,7 +102,7 @@
         android:background="@color/white"
         android:checked="true"
         android:showText="true"
-        android:text="啟用亂數選項"
+        android:text="@string/ShuffledOption"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textOff="OFF"
         android:textOn="ON"
@@ -111,7 +116,7 @@
         android:layout_marginTop="34dp"
         android:layout_marginEnd="15dp"
         android:onClick="activitySettingOnClick"
-        android:text="開始測驗"
+        android:text="@string/btn_questStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_2_tip" />
 
@@ -121,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="21dp"
-        android:text="題目列表"
+        android:text="@string/questionsList"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch_2_isShuffledOption" />
@@ -141,10 +146,11 @@
     <Button
         android:id="@+id/btn_2_numOfQuestionConfirm"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="15dp"
         android:onClick="activitySettingOnClick"
-        android:text="確定"
+        android:text="@string/Confirm"
+        app:layout_constraintBottom_toTopOf="@+id/TV_2_tip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_1_title_numOfQuestion" />
 
@@ -155,7 +161,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="1dp"
         android:onClick="activitySettingOnClick"
-        android:text="新增題目"
+        android:text="@string/btn_addNewQuestion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

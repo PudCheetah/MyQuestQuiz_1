@@ -4,6 +4,7 @@ import QuestPageViewModel
 import android.content.Context
 import android.widget.Toast
 import com.example.myquestquiz_1.Manager.IntentManager
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityQuestPageBinding
 
 class QuestPage_btnSet(var context: Context, var binding: ActivityQuestPageBinding, var myVM: QuestPageViewModel, var intentManager: IntentManager, var questPage_AlertDialogSet: QuestPage_AlertDialogSet) {
@@ -17,7 +18,7 @@ class QuestPage_btnSet(var context: Context, var binding: ActivityQuestPageBindi
 //                if (myVM.isHadAns.value == false){
 //                    Toast.makeText(it.context, "您尚未做答本題", Toast.LENGTH_SHORT).show()
 //                }else{
-                    Toast.makeText(context, "已經到底了", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.gotEnd), Toast.LENGTH_SHORT).show()
 //                    intentManager.putExtra("ToResult", "scoreCounter", myVM.scoreCounter.value)
                     questPage_AlertDialogSet.alertDialogSet()
 //                }

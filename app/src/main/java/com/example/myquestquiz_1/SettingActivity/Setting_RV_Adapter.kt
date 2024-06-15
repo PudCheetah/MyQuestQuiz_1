@@ -1,4 +1,4 @@
-package com.example.myquestquiz_1.RVadapter
+package com.example.myquestquiz_1.SettingActivity
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myquestquiz_1.Manager.IntentManager
 import com.example.myquestquiz_1.Manager.QuestionsTitleManager
-import com.example.myquestquiz_1.SettingActivity.SettingActivityViewModel
 import com.example.myquestquiz_1.databinding.ActivitySettingRvItemBinding
 
-class SettingActivity_RV_adapter(context: Context,var myVM: SettingActivityViewModel): RecyclerView.Adapter<SettingActivity_RV_adapter.SettingActivity_RV_holder>() {
+class Setting_RV_Adapter(context: Context, var myVM: SettingActivityViewModel): RecyclerView.Adapter<Setting_RV_Adapter.SettingActivity_RV_holder>() {
     var questionList = myVM.questionsListNow.value
     var questionsTitleManager = QuestionsTitleManager()
     var intentManager = IntentManager(context)

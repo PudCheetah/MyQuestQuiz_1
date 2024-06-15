@@ -1,7 +1,39 @@
 <resources>
     <string name="app_name">MyQuestQuiz_1</string>
-    <string name="AlertDialog_confirmWindows">確認視窗</string>
-    <string name="alertDialogMessage_questResult">即將跳轉到結果頁面  \n總題數: %1$d\n答對題數: %2$d \n答錯或跳過題數: %3$d \n答題率: %4$s%%</string>
+    <dimen name= "text_size_custom_Title">34sp</dimen>
+    <dimen name= "text_size_custom_btn">10sp</dimen>
+    <dimen name= "text_size_custom_text_1">12sp</dimen>
+    <dimen name= "text_size_custom_text_2">20 sp</dimen>
+
+    <string name="AlertDialog_confirmWindows">ConfirmWindows</string>
+    <string name="alertDialogMessage_questResult">Redirected to results page  \nTotal number of questions: %1$d\nNumber of correct answers: %2$d \nNumber of questions answered incorrectly or skipped: %3$d \nAnswer rate: %4$s%%</string>
+    <string name="jumpTo">Jump</string>
+    <string name="ErrorBankNameCantBeEmpty">Error,Bank name can\'t be empty.</string>
+    <string name="bankID">"BankID : "</string>
+    <string name="bankName">BankName :</string>
+    <string name="shuffledTitleON">Shuffled Title : ON</string>
+    <string name="shuffledTitleOFF">Shuffled Title : OFF</string>
+    <string name="shuffledOptionOn">ShuffledOption : ON</string>
+    <string name="shuffledOptionOFF">ShuffledOption : ON</string>
+    <string name="titleNumConfirmed">Number of questionscccdcdc has been confirmed.</string>
+    <string name="ErrorQuestionCantBeEmpty">Error, questions List is Empty, please add a new question first.</string>
+    <string name="Confirm">Confirm</string>
+    <string name="QuestionBankDeleteConfirm">Are you sure to delete this question bank?\nThis action will delete bank and question under the bank.</string>
+    <string name="QuestionHasBeenDelete">QuestionBank : %1$s has been delete.</string>
+    <string name="Cancel">Cancel</string>
+    <string name="AnsCorrect">Correct, please go to the next question.</string>
+    <string name="AnsWrong">Wrong, please go to the next question.</string>
+    <string name="haveAnswered">You have already answered, please go to the next question.</string>
+    <string name="plzTypeOption">Plz tap option.</string>
+    <string name="optionNhadConfirm">Option : %1$d，input completed.</string>
+    <string name="Result">Result.</string>
+    <string name="gotEnd">This is the last question.</string>
+    <string name="bankBelong">BankBelong: </string>
+    <string name="ErrorQuestionNameCantBeEmpty">Error, QuestionName can\'t be Empty.</string>
+    <string name="RestoreComplete">Saving complete，you can return to the previous page or continue to add.</string>
+    <string name="btn_Delete">Delete</string>
+    <string name="btn_choose">Choose</string>
+    <string name="TV_choiseAbank">Choise a question bank</string>
     <string-array name="activityNewQuestionSpinner">
         <item>0</item>
         <item>1</item>
@@ -15,4 +47,15 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+    <string name="plzInputBankName">Please enter the bank name</string>
+    <string name="btn_addBank">Add Bank</string>
+    <string name="btn_Detail">Detail</string>
+    <string name="CurrentNumberOfQuestionsInQuestionBank">Current number of questions in the \nquestion bank:</string>
+    <string name="plzInputNumOfQuestion">Please enter the number of questions you want to test</string>
+    <string name="ShuffledTitle">ShuffledTitle</string>
+    <string name="ShuffledOption">ShuffledOption</string>
+    <string name="btn_questStart">Quest Start</string>
+    <string name="questionsList">Questions List</string>
+    <string name="btn_addNewQuestion">Add New Question</string>
+    <string name="QuestionsOfQuest">Quiz Questions</string>
 </resources>

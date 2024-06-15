@@ -1,18 +1,9 @@
 package com.example.myquestquiz_1.AddQuestionActivity
 
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isInvisible
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myquestquiz_1.Manager.KeyboardManager
-import com.example.myquestquiz_1.Manager.QuestionsOptionManager
 import com.example.myquestquiz_1.R
-import com.example.myquestquiz_1.RVadapter.AddNewQuestion_RV_adapter
 import com.example.myquestquiz_1.databinding.ActivityAddNewQuestionBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,8 +33,8 @@ class AddNewQuestion : AppCompatActivity() {
             joinAll(myVM.getVMinitJob())
             myVM.selectedBank.value = intent.getLongExtra("SelectedBank", -1)
             myVM.bankNmae.value = intent.getStringExtra("BankName")
-            binding.TV4BankBelong.text = ("題庫ID: " + myVM.selectedBank.value.toString())
-            binding.TV5BankName.text = ("題庫名稱: " + myVM.bankNmae.value)
+            binding.TV4BankBelong.text = (getString(R.string.bankID) + myVM.selectedBank.value.toString())
+            binding.TV5BankName.text = (getString(R.string.bankName) + myVM.bankNmae.value)
             spinnerSet.spinnerAdapterSet_ForNumOfOption()
             myVM.spinnerChoice.observe(this@AddNewQuestion){
                 spinnerSet.spinnerAdapterSet_ForCorrectAns()

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myquestquiz_1.MyDatabase.MyQuestionBank
-import com.example.myquestquiz_1.RVadapter.StartActivity_RV_adapter
+import com.example.myquestquiz_1.R
 import com.example.myquestquiz_1.databinding.ActivityStartBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -39,7 +39,7 @@ class StartActivity : AppCompatActivity() {
     //新增題庫
     fun btn_1_activityStartOnclick(view: View){
         if(binding.ET1TypeBankName.text?.isEmpty() == true){
-            Toast.makeText(this, "錯誤", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.ErrorBankNameCantBeEmpty), Toast.LENGTH_SHORT).show()
         }else{
             myVM.upsertBank(binding.ET1TypeBankName.text.toString())
             binding.ET1TypeBankName.setText("")
@@ -51,7 +51,7 @@ class StartActivity : AppCompatActivity() {
         with(binding.RV1RvForQuestionBank){
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            adapter = StartActivity_RV_adapter(context, myVM)
+            adapter = StartActivity_RV_Adapter(context, myVM)
         }
     }
 }

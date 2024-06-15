@@ -24,6 +24,7 @@ class QuestionInfoViewModel(application: Application, var questionIDFromIntent: 
     var questionID = MutableLiveData<Long>()
     var questionTitle =MutableLiveData<String>()
     var correctAns = MutableLiveData<Int>()
+    var storeAccept = MutableLiveData<Boolean>()
 
     init {
         questionInfoViewModelInitJob = CoroutineScope(Dispatchers.Main).launch {
